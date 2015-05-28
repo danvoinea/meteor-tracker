@@ -10,12 +10,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">meteor issue tracker</a>
+                <a class="navbar-brand" data-toggle="collapse" data-target=".navbar-collapse.in" href="/">meteor issue tracker</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Dashboard</a></li>
-                    <li><a  href="{{ pathFor 'complaints' }}">Complaints</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="/">Dashboard</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="{{ pathFor 'complaints' }}">Complaints</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

@@ -16,5 +16,3 @@ Template.fullComplaint.helpers({
     return Schemas.Comment;
   }
 });
-
-

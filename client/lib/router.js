@@ -7,6 +7,13 @@ Router.configure({
 });
 
 
+var IR_Filters = {
+    scrollUp: function() {
+        $('body,html').animate({scrollTop:0},200);
+    }
+};
+Router.onAfterAction(IR_Filters.scrollUp);
+
 Router.map(function() {
 
     this.route('homePage', {

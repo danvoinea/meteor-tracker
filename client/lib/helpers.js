@@ -8,3 +8,7 @@ Template.registerHelper("fromNow", function(date) {
 Template.registerHelper("calendar", function(date) {
     if(date) return moment(date).calendar();
 });
+
+Template.registerHelper("firstLetters", function(name) {    
+    return name.match(/\b(\w)/g).join('').toUpperCase();
+});
