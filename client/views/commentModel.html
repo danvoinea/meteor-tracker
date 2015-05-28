@@ -1,8 +1,10 @@
 <template name="commentModel">
-    <div class="row commentMeta">
-        <div class="col-md-8">{{name}} {{action}} @ <span class="date">{{calendar lastUpdate}}</span> | Cost - {{cost}}</div>
-    </div>
-    <div class="row commentBody">
-        <div class="col-md-9">{{comment}}</div>
+    <div class="row top10">
+        <div class="col-md-offset-1 col-md-2 avatar"><span>{{name}}</span></div>
+        <div class="col-md-8 commentMeta">{{name}} {{action}} @ <span class="date">{{calendar lastUpdate}}</span> | Cost - {{cost}}
+            <div class="commentBody">
+                {{comment}}
+            </div>
+        </div>
     </div>
 </template>

@@ -1,17 +1,20 @@
 <template name = 'fullComplaint'>
-  <h2>{{issue}}</h2>    
-  <h6>{{name}} opened the complaint {{fromNow lastUpdate}}</h6>
-  <p>{{ description }}</p>
-    
+    <div class="complaintDetalis">
+        <h6 class="{{priority}}"> Status: <span class="issue-meta">{{priority}}</span> {{ status}}</h6>
+  <h2 class="{{priority}}">{{issue}}</h2>
+   <p class="italic">{{name}} opened the complaint {{fromNow lastUpdate}}</p>
+   <div class="description">{{ description }}</div>
+    </div>
+    <div class="comments">
         {{#each Comments}}
         <div class="comment">
                 {{> commentModel}}
         </div>
         {{/each}}
-    
+    </div>
     
     {{#if currentUser }}
-    <br />
+    <div class="commentsForm"><br />
       {{#autoForm resetOnSuccess=false collection="Comments" schema=commentSchema id="commentForm" type="insert"}}
   <fieldset>
     <legend>Add comment</legend>
@@ -28,6 +31,7 @@
   {{/autoForm}}
     
     <br />
+        </div>
     {{/if}}
     
 </template>

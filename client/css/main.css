@@ -2,10 +2,153 @@
 body { 
         padding-top: 40px; 
         padding-bottom:30px;
+        font-family: adelle, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 
 .footer {  
   height: 60px;
   background-color: #e5e5e5;
+}
+
+
+.status {
+    width: 180px
+}
+
+.status {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    font: normal 14px/15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 40px;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 19px 5px 0 5px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 120px
+}
+
+.status {
+    padding-top: 12px
+}
+
+.status.Urgent {
+    background: #952715
+}
+
+.status.Important {
+    background: #f26f21
+}
+
+
+.status.Update {
+    background: #6da79b
+}
+
+.status {
+    display: block
+}
+
+.badge { margin-top:10px; }
+
+.badge.Resolved { background-color: black; } 
+
+.complaint { min-height:60px; border-bottom: 1px solid #ccc;margin-top:10px;}
+
+.complaint a.Urgent, h6.Urgent {
+    color: #952715
+}
+
+.complaint a.Important, h6.Important {
+    color: #f26f21
+}
+
+
+.complaint a.Update, h6.Update {
+    color: #6da79b
+}
+
+h6 { font-size:12pt; margin-bottom:0;}
+
+.issue-meta::after {content:' \2022 '; font-family: "Helvetica Neue";} 
+
+.complaint a {
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font: normal 18px/20px  "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+}
+
+span.italic { font-style:italic; }
+
+.description { padding:20px; margin-bottom:20px; border-bottom:1px solid #ccc; }
+
+.commentMeta {  min-height:60px; border-bottom: 1px solid #ccc; padding-bottom:5px; text-rendering: optimizeLegibility;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+display: block;
+font: normal 12px/16px "AvenirLT-Black","Helvetica Neue",Helvetica,Arial,sans-serif;
+letter-spacing: .5px;
+padding-top: 3px;
+padding-bottom: 3px;
+text-transform: uppercase; font-weight: bold;}
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
+
+.commentBody { color: #333;
+font-size: 15px;
+line-height: 1.67;
+overflow-x: auto;
+font-weight: normal;
+overflow-y: hidden; text-transform: none;}
+
+
+.avatar {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    height: 48px;
+    overflow: hidden;
+    position: relative;
+    right:20px;
+    width: 58px;
+}
+
+.avatar span {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background: #d7d7d7;
+    color: white;
+    display: block;
+    font: normal 18px/22px "AvenirLT-Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 14px 0 12px 0;
+    text-align: center;
+    width: 58px;
+    height: 48px;
 }

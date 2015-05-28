@@ -11,7 +11,7 @@ Meteor.startup(function() {
         _(30).times(function(n) {
             Complaints.insert({ 
                 issue: Fake.sentence(7), 
-                description: Fake.paragraph(3), 
+                description: Fake.paragraph(30), 
                 name: Fake.user().fullname, 
                 userID: "generated",
                 lastUpdate: randomDate( new Date(2015, 0, 1), new Date()),
