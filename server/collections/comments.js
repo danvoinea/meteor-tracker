@@ -1,5 +1,5 @@
 Comments = new Meteor.Collection("comments");
-Comments.attachSchema(Schemas.Comments);
+Comments.attachSchema(Schemas.Comment);
 
 
 // Publish the collection to the client

@@ -8,4 +8,3 @@ Template.registerHelper("fromNow", function(date) {
 Template.registerHelper("calendar", function(date) {
     if(date) return moment(date).calendar();
 });
-

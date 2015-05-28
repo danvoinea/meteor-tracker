@@ -1,4 +1,5 @@
 //https://github.com/iron-meteor/iron-router/blob/devel/Guide.md
+//https://github.com/meteorhacks/fast-render
 //code shared between client and server
 Router.configure({
     // This is the default layout/top-level template 
@@ -9,17 +10,19 @@ Router.configure({
 Router.map(function() {
 
     this.route('homePage', {
-        path: '/'
+        path: '/', fastRender: true 
     });
 
     this.route('complaints', {
-        path: '/complaints'
-    });
+        path: '/complaints', fastRender: true 
+    } );
     
     this.route('complaint', {
         path: '/complaint/:_id',
-        data: function () {return Complaints.findOne({_id: this.params._id})},
-        template: 'fullComplaint'
+        data: function () {
+            return Complaints.findOne({_id: this.params._id})
+        },
+        template: 'fullComplaint', fastRender: true 
     });
     
 });

@@ -1,0 +1,33 @@
+<template name = 'fullComplaint'>
+  <h2>{{issue}}</h2>    
+  <h6>{{name}} opened the complaint {{fromNow lastUpdate}}</h6>
+  <p>{{ description }}</p>
+    
+        {{#each Comments}}
+        <div class="comment">
+                {{> commentModel}}
+        </div>
+        {{/each}}
+    
+    
+    {{#if currentUser }}
+    <br />
+      {{#autoForm resetOnSuccess=false collection="Comments" schema=commentSchema id="commentForm" type="insert"}}
+  <fieldset>
+    <legend>Add comment</legend>
+    {{> afQuickField name="comment" rows=10}}
+    {{> afQuickField name="cost"}}
+    <span style="display: none">{{> afQuickField name='complaint_id' value=_id}} </span>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Comment</button>
+      <button type="submit" class="btn btn-primary">Resolve</button>
+      <button type="reset" class="btn btn-default">Reset</button>
+    </div>
+  </fieldset>
+  {{/autoForm}}
+    
+    <br />
+    {{/if}}
+    
+</template>

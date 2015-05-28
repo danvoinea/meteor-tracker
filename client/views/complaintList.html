@@ -1,0 +1,33 @@
+<template name="complaints">
+  <h1 class="title">Complaints page</h1>
+
+   <div class="complaints">
+        {{#each Complaints}}
+        <div class="complaint">
+                {{> complaintModel}}
+        </div>
+        {{/each}}
+    </div>
+    
+    {{#if currentUser }}
+<br />
+  {{#autoForm collection="Complaints" schema=complaintSchema id="complaintForm" type="insert" }}
+  <fieldset>
+    <legend>Add complaint</legend>
+    {{> afQuickField name="issue"}}
+    {{> afQuickField name="description" rows=10}}
+    {{> afFieldInput name="priority"}}
+
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-default">Reset</button>
+    </div>
+  </fieldset>
+  {{/autoForm}}
+    <br />
+
+    {{/if}}
+    
+    
+
+</template>
