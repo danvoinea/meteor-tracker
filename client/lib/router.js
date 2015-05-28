@@ -10,11 +10,11 @@ Router.configure({
 Router.map(function() {
 
     this.route('homePage', {
-        path: '/', fastRender: true 
+        path: '/'
     });
 
     this.route('complaints', {
-        path: '/complaints', fastRender: true 
+        path: '/complaints', 
     } );
     
     this.route('complaint', {
@@ -22,7 +22,7 @@ Router.map(function() {
         data: function () {
             return Complaints.findOne({_id: this.params._id})
         },
-        template: 'fullComplaint', fastRender: true 
+        template: 'fullComplaint'
     });
     
 });

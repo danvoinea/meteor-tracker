@@ -1,4 +1,24 @@
 <template name="homePage">
   <h1 class="title">Dashboard</h1>
-    <div class="subtitle">Show only my issues.</div>
+    <div class="subtitle">Here I can see what I posted.</div>
+        {{#if currentUser }}
+
+    <h2>Comments</h2>
+        <div class="comments">
+        {{#each Comments}}
+        <div class="comment">
+                {{> commentModel}}
+        </div>
+        {{/each}}
+    </div>
+    <h2>Complaints</h2>
+       <div class="complaints">
+        {{#each Complaints}}
+        <div class="complaint">
+                {{> complaintModel}}
+        </div>
+        {{/each}}
+        </div>
+    
+    {{/if}}
 </template>

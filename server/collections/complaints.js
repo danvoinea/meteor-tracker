@@ -1,8 +1,3 @@
-/*
-    The cars collection
- */
-
-// Declare the collection
 Complaints = new Meteor.Collection("complaints");
 
 Complaints.attachSchema(Schemas.Complaint);
