@@ -1,5 +1,7 @@
 Complaints = new Meteor.Collection("complaints");
 
+Complaints.attachSchema(Schemas.Complaint);
+
 Meteor.subscribe("complaints");
     
 Template.complaints.Complaints = function(){
@@ -17,8 +19,6 @@ Template.complaints.helpers({
     return Schemas.Complaint;
   }
 });
-
-
 
 AutoForm.addHooks('complaints', {
   onSubmit: function (insertDoc, updateDoc, currentDoc) {

@@ -1,5 +1,8 @@
 Comments = new Meteor.Collection("comments");
 
+Comments.attachSchema(Schemas.Comment);
+
+
 Meteor.subscribe("comments");
 
 Template.fullComplaint.Comments = function(){
