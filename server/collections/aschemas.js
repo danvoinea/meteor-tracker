@@ -49,6 +49,12 @@ Schemas.Comments = new SimpleSchema({
         label: "Cost of repair",
         optional: true,
     },
+    action: {
+        type: String,
+        allowedValues: ['comment', 'resolved'], 
+        label: "Complain Status",
+        max: 200
+    },
     lastUpdate: {
         type: Date,
         label: "When last updated"

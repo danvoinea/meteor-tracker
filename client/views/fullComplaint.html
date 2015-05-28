@@ -1,5 +1,11 @@
 <template name = 'fullComplaint'>
   <h2>{{ issue }}</h2>
-  <h6>{{name}} opened the complaint {{customDateFormat lastUpdate}}</h6>
+  <h6>{{name}} opened the complaint {{fromNow lastUpdate}}</h6>
   <p>{{ description }}</p>
+    
+        {{#each Comments}}
+        <div class="comment">
+                {{> commentModel}}
+        </div>
+        {{/each}}
 </template>
