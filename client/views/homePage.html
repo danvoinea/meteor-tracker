@@ -3,19 +3,21 @@
     <div class="subtitle">Here I can see what I posted.</div>
         {{#if currentUser }}
 
-    <h2>Comments</h2>
-        <div class="comments">
-        {{#each Comments}}
-        <div class="comment">
-                {{> commentModel}}
-        </div>
-        {{/each}}
-    </div>
+
     <h2>Complaints</h2>
        <div class="complaints">
         {{#each Complaints}}
         <div class="complaint">
                 {{> complaintModel}}
+        </div>
+        {{/each}}
+        </div>
+    
+        <h2>Comments</h2>
+        <div class="comments">
+        {{#each Comments}}
+        <div class="comment">
+                {{> commentModel}}
         </div>
         {{/each}}
         </div>

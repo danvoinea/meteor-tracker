@@ -23,4 +23,3 @@ AutoForm.addHooks(null, {
       console.log(name + " error:", error);
     }
   });
- 
