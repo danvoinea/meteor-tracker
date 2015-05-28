@@ -1,0 +1,10 @@
+<template name="complaintModel">
+    <div class="row complaintBody">
+        <div class="col-md-1">#{{index}}</div>
+        <div class="col-md-8"><a href="/complaint/{{_id}}" class="complaint">
+            <span class="issue">{{issue}}</span></a></div>
+    </div>
+    <div class="row complaintMeta">
+        <div class="col-md-9">{{status}} - created <span class="date">{{customDateFormat lastUpdate}}</span> by {{name}}</div>
+    </div>
+</template>

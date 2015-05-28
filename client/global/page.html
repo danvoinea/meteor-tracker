@@ -1,0 +1,19 @@
+<template name="pageLayout">
+
+    <header>
+        {{> nav}}
+    </header>
+
+    <body>
+        <div class="container">
+            {{> yield}}
+        </div>
+    </body>
+
+    <footer class="footer navbar-fixed-bottom">
+        <div class="container">
+            Footer things.
+        </div>
+    </footer>
+
+</template>
