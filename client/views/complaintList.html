@@ -1,6 +1,7 @@
 <template name="complaints">
   <h1 class="title">Complaints page</h1>
 
+<button class="Open btn btn-info">OPEN</button> <button class="Resolved btn btn-info">RESOLVED</button> <button class="All btn btn-info">ALL COMPLAINTS</button>
     
    <div class="complaints">
         {{#each Complaints}}
@@ -9,7 +10,6 @@
         </div>
         {{/each}}
     </div>
-    
     
     {{#if currentUser }}
 <br />
