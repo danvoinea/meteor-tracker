@@ -7,7 +7,6 @@
 meteor-platform
 accounts-password
 iron:router
-accounts-ui-bootstrap-3
 houston:admin
 aldeed:collection2
 anti:fake
@@ -15,3 +14,5 @@ momentjs:moment
 mizzao:bootstrap-3
 aldeed:autoform
 fast-render
+accounts-ui-bootstrap-3
+reactive-var

@@ -6,6 +6,7 @@
    <div class="description">{{ description }}</div>
     </div>
     <div class="comments">
+    <i>{{commentCount}} comments on this complaint so far.</i>
         {{#each Comments}}
         <div class="comment">
                 {{> commentModel}}
@@ -15,21 +16,23 @@
     
     {{#if currentUser }}
     <div class="commentsForm"><br />
-      {{#autoForm resetOnSuccess=false collection="Comments" schema=commentSchema id="commentForm" type="insert"}}
+      {{#autoForm doc=this collection="Comments" schema=commentSchema id="commentForm" type="insert"}}
   <fieldset>
     <legend>Add comment</legend>
     {{> afQuickField name="comment" rows=10}}
     {{> afQuickField name="cost"}}
-    <span style="display: none">{{> afQuickField name='complaint_id' value=_id}} </span>
 
     <div>
-      <button type="submit" class="btn btn-primary green" name="status" value="resolve">Resolve</button>
-      <button type="submit" class="btn btn-primary" name="status" value="comment">Comment</button>
+        {{#if isResolved status}}
+        <button type="submit" class="btn btn-primary green" name="status" id="reopen">Ropen Issue</button>
+        {{else}}
+        <button type="submit" class="btn btn-primary green" name="status" id="resolve">Resolve</button>
+        {{/if}}
+      <button type="submit"  class="btn btn-primary" name="status" id="comment">Comment</button>
       <button type="reset" class="btn btn-default">Reset</button>
     </div>
   </fieldset>
   {{/autoForm}}
-    
     <br />
         </div>
     {{/if}}

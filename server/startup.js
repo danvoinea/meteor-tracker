@@ -13,6 +13,7 @@ Meteor.startup(function() {
                 issue: Fake.sentence(7), 
                 description: Fake.paragraph(30), 
                 name: Fake.user().fullname, 
+                commentCount: 0,
                 userID: "generated",
                 lastUpdate: randomDate( new Date(2015, 0, 1), new Date()),
                 status: Fake.fromArray(['Open','Resolved']),
@@ -21,6 +22,9 @@ Meteor.startup(function() {
 
                 // _id;
                 _(Math.floor((Math.random() * 10) + 1)).times(function(n) {
+                
+                Complaints.update(_id, {"$inc" : {commentCount: 1}},{validate: false, getAutoValues: false});
+
                 Comments.insert({
                     complaint_id: _id,
                     comment: Fake.paragraph(3),
@@ -30,6 +34,8 @@ Meteor.startup(function() {
                     action: Fake.fromArray(['comment','resolved']),
                     lastUpdate: randomDate( new Date(2015, 0, 1), new Date())
                 },{validate: false, getAutoValues: false});
+                
+                    
                 });
             });
         });

@@ -2,15 +2,15 @@
     <div class="row complaintBody">
         <div class="col-md-2 col-xs-2"><span class="status {{priority}}"> {{priority}}</span></div>
         <div class="col-md-1 col-xs-2"><span class="badge {{status}}">{{status}}</span></div>
-        <div class="col-md-8 col-xs-8">
-                    <a href="/complaint/{{_id}}" class="{{priority}}">
-                                                                 #{{index}}: {{issue}}
-                                                                 </a>
-                                                                 <br />
+        <div class="col-md-8 col-xs-7">
+            <a href="/complaint/{{_id}}" class="{{priority}}">
+                #{{index}}: {{issue}}
+            </a>
+            <br />
             <span class="italic">Created {{fromNow lastUpdate}} by {{name}}</span>
-    <!--        // GET NUMBER OF COMMENTS? -->
-    
-                                                                                           </div>
-                                                                                           </div>
+        </div>
+        <div class="col-md-1 col-xs-2"><span class="comment-bubble">{{commentCount}}</span></div>
 
-                                                                                           </template>
+    </div>
+
+</template>

@@ -1,5 +1,3 @@
-// https://meteor.hackpad.com/Meteor-Cookbook-Using-Dates-and-Times-qSQCGFc06gH
-
 Template.registerHelper("fromNow", function(date) {
     if(date) return moment(date).fromNow();
 });
@@ -10,5 +8,21 @@ Template.registerHelper("calendar", function(date) {
 });
 
 Template.registerHelper("firstLetters", function(name) {    
-    return name.match(/\b(\w)/g).join('').toUpperCase();
+    if (name) return name.match(/\b(\w)/g).join('').toUpperCase();
+});
+
+Template.registerHelper("isResolved", function(status) {    
+    if (status === "Resolved") 
+    { 
+        return true;
+    } else {
+        return false;
+    }
+});
+
+Template.registerHelper("createLinkComplaint", function(id) {    
+    if (id){
+        var myReturn = Complaints.findOne({'_id': id});
+        return '<a href="/complaint/'+id+'" class="'+myReturn.priority+'">'+myReturn.issue+'</a>:';
+    }
 });

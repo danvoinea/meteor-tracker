@@ -1,9 +1,7 @@
 <template name="homePage">
   <h1 class="title">Dashboard</h1>
-    <div class="subtitle">Here I can see what I posted.</div>
+    
         {{#if currentUser }}
-
-
     <h2>Complaints</h2>
        <div class="complaints">
         {{#each Complaints}}
@@ -17,10 +15,14 @@
         <div class="comments">
         {{#each Comments}}
         <div class="comment">
+            {{{createLinkComplaint complaint_id}}}
                 {{> commentModel}}
         </div>
         {{/each}}
         </div>
     
+    {{else}}
+        <div class="subtitle">Log in to see all your posts and comments.</div>
     {{/if}}
+    
 </template>

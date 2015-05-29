@@ -1,9 +1,6 @@
-Complaints = new Meteor.Collection("complaints");
-
-Complaints.attachSchema(Schemas.Complaint);
-
 Meteor.subscribe("complaints");
-    
+
+
 Template.complaints.Complaints = function(){
     return Complaints.find({}, {sort: {lastUpdate: -1}}).
         map(function(document, index){
@@ -13,24 +10,8 @@ Template.complaints.Complaints = function(){
 });
 }
 
-
 Template.complaints.helpers({
   complaintSchema: function() {
     return Schemas.Complaint;
-  }
-});
-
-AutoForm.addHooks('complaints', {
-  onSubmit: function (insertDoc, updateDoc, currentDoc) {
-    console.log(arguments);
-    return false;
-  }
-});
-
-
-AutoForm.addHooks('fullComplaint', {
-  onSubmit: function (insertDoc, updateDoc, currentDoc) {
-    console.log(arguments);
-    return false;
   }
 });

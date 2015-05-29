@@ -8,8 +8,7 @@ Template.homePage.Complaints = function(){
 });
 }
 
-//TO DEBUG - BROKEN
 Template.homePage.Comments = function(){
-    console.log(Meteor.userId());
     return Comments.find({userID:Meteor.userId()});
 };
+

@@ -1,11 +1,6 @@
-Complaints = new Meteor.Collection("complaints");
-
-Complaints.attachSchema(Schemas.Complaint);
-
-
 // Publish the collection to the client
 Meteor.publish("complaints", function() {
-  return Complaints.find();
+  return Complaints.find({},{sort: {lastUpdate: -1}});
 });
 
 // Set permissions on this collection

@@ -1,8 +1,3 @@
-Comments = new Meteor.Collection("comments");
-
-Comments.attachSchema(Schemas.Comment);
-
-
 // Publish the collection to the client
 Meteor.publish("comments", function() {
   return Comments.find();
