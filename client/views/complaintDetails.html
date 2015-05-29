@@ -1,40 +1,40 @@
 <template name = 'fullComplaint'>
     <div class="complaintDetalis">
         <h6 class="{{priority}}"> Status: <span class="issue-meta">{{priority}}</span> {{ status}}</h6>
-  <h2 class="{{priority}}">{{issue}}</h2>
-   <p class="italic">{{name}} opened the complaint {{fromNow lastUpdate}}</p>
-   <div class="description">{{ description }}</div>
+        <h2 class="{{priority}}">{{issue}}</h2>
+        <p class="italic">{{name}} opened the complaint {{fromNow lastUpdate}}</p>
+        <div class="description">{{ description }}</div>
     </div>
     <div class="comments">
-    <i>{{commentCount}} comments on this complaint so far.</i>
+        <i>{{commentCount}} comments on this complaint so far.</i>
         {{#each Comments}}
         <div class="comment">
-                {{> commentModel}}
+            {{> commentModel}}
         </div>
         {{/each}}
     </div>
-    
+
     {{#if currentUser }}
     <div class="commentsForm"><br />
-      {{#autoForm doc=this collection="Comments" schema=commentSchema id="commentForm" type="insert"}}
-  <fieldset>
-    <legend>Add comment</legend>
-    {{> afQuickField name="comment" rows=10}}
-    {{> afQuickField name="cost"}}
+        {{#autoForm doc=this collection="Comments" schema=commentSchema id="commentForm" type="insert"}}
+        <fieldset>
+            <legend>Add comment</legend>
+            {{> afQuickField name="comment" rows=10}}
+            {{> afQuickField name="cost"}}
 
-    <div>
-        {{#if isResolved status}}
-        <button type="submit" class="btn btn-primary green" name="status" id="reopen">Ropen Issue</button>
-        {{else}}
-        <button type="submit" class="btn btn-primary green" name="status" id="resolve">Resolve</button>
-        {{/if}}
-      <button type="submit"  class="btn btn-primary" name="status" id="comment">Comment</button>
-      <button type="reset" class="btn btn-default">Reset</button>
+            <div>
+                {{#if isResolved status}}
+                <button type="submit" class="btn btn-primary green" name="status" id="reopen">Ropen Issue</button>
+                {{else}}
+                <button type="submit" class="btn btn-primary green" name="status" id="resolve">Resolve</button>
+                {{/if}}
+                <button type="submit"  class="btn btn-primary" name="status" id="comment">Comment</button>
+                <button type="reset" class="btn btn-default">Reset</button>
+            </div>
+        </fieldset>
+        {{/autoForm}}
+        <br />
     </div>
-  </fieldset>
-  {{/autoForm}}
-    <br />
-        </div>
     {{/if}}
-    
+
 </template>
