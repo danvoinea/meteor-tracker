@@ -23,7 +23,6 @@ Template.complaints.helpers({
 
 Template.complaints.events({
     'click button.Open': function () {
-        console.log(filter);
         if (filter !== "Open"){ 
             Session.set("complaintStatus", 'Open');
             $("button").removeClass('active');

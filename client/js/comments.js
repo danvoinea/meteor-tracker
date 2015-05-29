@@ -39,7 +39,6 @@ AutoForm.hooks({
                 doc.complaint_id = this.docId;
                 doc.action = submit;
 
-
                 if (doc.action === "resolved") { 
 
 
