@@ -7,7 +7,7 @@ function randomDate(start, end) {
 Meteor.startup(function() {
 
     // Fill the collections with some initial data if it's empty - both complaints and comments
-     
+
     if (Complaints.find().count() === 0) {
         _(30).times(function(n) {
             Complaints.insert({ 
@@ -23,18 +23,18 @@ Meteor.startup(function() {
 
                 // _id;
                 _(Math.floor((Math.random() * 10) + 1)).times(function(n) {
-                
-                Comments.insert({
-                    complaint_id: _id,
-                    comment: Fake.paragraph(3),
-                    name: Fake.user().fullname,
-                    userID: "generated",
-                    cost: Fake.fromArray([0,50,100,2050]),
-                    action: Fake.fromArray(['comment','resolved']),
-                    lastUpdate: randomDate( new Date(2015, 0, 1), new Date())
-                },{validate: false, getAutoValues: false});
-                
-                    
+
+                    Comments.insert({
+                        complaint_id: _id,
+                        comment: Fake.paragraph(3),
+                        name: Fake.user().fullname,
+                        userID: "generated",
+                        cost: Fake.fromArray([0,50,100,2050]),
+                        action: Fake.fromArray(['comment','resolved']),
+                        lastUpdate: randomDate( new Date(2015, 0, 1), new Date())
+                    },{validate: false, getAutoValues: false});
+
+
                 });
             });
         });
