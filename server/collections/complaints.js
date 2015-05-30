@@ -20,3 +20,12 @@ Complaints.allow({
 });
 
 
+Comments.find().observe({
+        added: function(post){
+            // When new posts are added, the user gain the points.
+            // console.log(post);
+            Complaints.update(post.complaint_id, {$inc: {'commentCount': 1}},{validate: false, getAutoValues: false});     
+        }
+});
+
+    

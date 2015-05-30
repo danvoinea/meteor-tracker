@@ -41,23 +41,19 @@ AutoForm.hooks({
 
                 if (doc.action === "resolved") { 
 
-
                     if (isNaN(doc.cost)){ 
-
                         AutoForm.getValidationContext("commentForm").addInvalidKeys([
                             {name: "cost", type: "expectedNumber"}
                         ]);
 
                         return false;
                     } else {
-                        Complaints.update(doc.complaint_id, {"$set" : {'status': 'Resolved'}});
+                        Complaints.update(doc.complaint_id, {"$set" : {'status': 'Resolved'}},{validate: false, getAutoValues: false});
                     }
                 } else if (doc.action === "reopen") { 
                     doc.action = 'comment';
-                    Complaints.update(doc.complaint_id, {"$set" : {'status': 'Open'}});
+                    Complaints.update(doc.complaint_id, {"$set" : {'status': 'Open'}},{validate: false, getAutoValues: false});
                 }
-
-                Complaints.update(doc.complaint_id, {"$inc" : {'commentCount': 1}});
 
                 return doc;
             }

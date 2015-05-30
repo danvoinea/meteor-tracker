@@ -2,6 +2,7 @@ function randomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
+
 // What to do when the server first starts up
 Meteor.startup(function() {
 
@@ -23,8 +24,6 @@ Meteor.startup(function() {
                 // _id;
                 _(Math.floor((Math.random() * 10) + 1)).times(function(n) {
                 
-                Complaints.update(_id, {"$inc" : {commentCount: 1}},{validate: false, getAutoValues: false});
-
                 Comments.insert({
                     complaint_id: _id,
                     comment: Fake.paragraph(3),
