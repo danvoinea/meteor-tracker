@@ -32,3 +32,5 @@ Router.map(function() {
     });
     
 });
+
+AccountsTemplates.configureRoute('signIn');

@@ -1,17 +1,8 @@
-Accounts.ui.config({
-    requestPermissions: {},
-    extraSignupFields: [{
-        fieldName: 'fullName',
-        fieldLabel: 'Full name',
-        inputType: 'text',
-        visible: true,
-        validate: function(value, errorFunction) {
-          if (!value) {
-            errorFunction("Please write your full name");
-            return false;
-          } else {
-            return true;
-          }
-        }
-    }]
+AccountsTemplates.addField({
+    _id: 'fullName',
+    type: 'text',
+    required: true,
+    displayName: "Full name",
+    func: function(value){ return value === ''; },
+    errStr: 'Please enter your full name'
 });
